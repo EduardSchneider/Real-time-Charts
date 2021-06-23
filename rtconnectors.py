@@ -19,7 +19,7 @@ This is necessary because Periodic dataframes don't function otherwise.
 
 def get_http_connector(connection):
     jsonlist = []
-    data_request = requests.get(connection.adress)
+    data_request = requests.get(connection.address)
     jsonlist.append(data_request.json())
     df = pd.DataFrame(jsonlist)
 
@@ -28,7 +28,7 @@ def get_http_connector(connection):
 
 def get_http_connector2(connection):
     jsonlist = []
-    data_request = requests.get(connection.adress)
+    data_request = requests.get(connection.address)
     jsonlist.append(data_request.json())
     df = pd.DataFrame(jsonlist)
 

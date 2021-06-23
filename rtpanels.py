@@ -69,16 +69,16 @@ def create_scatterplot_panel(dashboard):
 
     plot_button = pn.widgets.Button(name='add plot', button_type='primary')
     
-    plot_button.on_click(on_click_scatterplot(x.value, y.value))
+    # plot_button.on_click(on_click_scatterplot(connection, x.value, y.value))
     
-    scatterplot_panel.append(pn.Row(x, y, plot_button))
+    # scatterplot_panel.append(pn.Row(x, y, plot_button))
 
-    #for i in range(len(connection.variables)):
+    for i in range(len(connection.variables)):
 
-        #for j in range(i+1, len(connection.variables)):
+        for j in range(i+1, len(connection.variables)):
 
-            #plot = connection.df.hvplot.scatter(y=connection.variables[i], x=connection.variables[j], backlog=1000)
-            #scatterplot_panel.append(plot)
+            plot = connection.df.hvplot.scatter(y=connection.variables[i], x=connection.variables[j], backlog=1000)
+            scatterplot_panel.append(plot)
 
     return ('Scatter plot', scatterplot_panel)
 
